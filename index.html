@@ -176,6 +176,32 @@ btn.disabled=true;
 
 </body>
 </html>
+<script>
+async function loadAMBVPrice() {
+  try {
+    const response = await fetch(
+      "https://api.dexscreener.com/latest/dex/tokens/0x87a8049B217B3E765Bf3f66aA7177Fafe48081Ba"
+    );
+    const data = await response.json();
+
+    if (data.pairs && data.pairs.length > 0) {
+      const price = parseFloat(data.pairs[0].priceUsd).toFixed(6);
+      document.getElementById("tokenPrice").textContent =
+        "AMBV price: $" + price + " USD";
+    } else {
+      document.getElementById("tokenPrice").textContent =
+        "AMBV price unavailable";
+    }
+  } catch (e) {
+    document.getElementById("tokenPrice").textContent =
+      "Price loading error";
+  }
+}
+
+loadAMBVPrice();
+setInterval(loadAMBVPrice, 30000);
+</script>
+
 
 
 
