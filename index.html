@@ -1,285 +1,171 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AMBV – Ambulance Value</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
-body{background:#f4f8fb;color:#1a1a1a;line-height:1.6;overflow-x:hidden}
-
-/* ===== HEADER ===== */
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,Helvetica,sans-serif}
+body{background:#f4f8fb;color:#123}
 header{
 position:relative;
-padding:170px 20px 150px;
+padding:120px 20px;
 text-align:center;
 color:white;
-background:linear-gradient(135deg,#0a2a4a,#0d6efd);
+background:
+linear-gradient(135deg, rgba(10,42,74,0.95), rgba(13,110,253,0.95));
 overflow:hidden;
 }
-header::before{
+header::after{
 content:"⚕";
 position:absolute;
-top:55%;
-left:78%;
-font-size:520px;
-opacity:0.05;
-transform:translate(-50%,-50%) rotate(-15deg);
+right:-40px;
+top:50%;
+font-size:420px;
+opacity:0.06;
+transform:translateY(-50%);
 pointer-events:none;
 }
-header img{
-width:420px;
-max-width:90%;
-margin-bottom:40px;
+.logo{
+width:260px;
 animation:float 4s ease-in-out infinite;
-position:relative;
-z-index:2;
 }
 @keyframes float{
 0%{transform:translateY(0)}
-50%{transform:translateY(-14px)}
+50%{transform:translateY(-12px)}
 100%{transform:translateY(0)}
 }
-header h1{font-size:44px;margin-bottom:15px}
-header p{font-size:18px;max-width:900px;margin:auto;opacity:.95}
-
-/* ===== LANG ===== */
-.lang{
-position:fixed;top:20px;right:20px;
-background:white;border-radius:30px;
-padding:8px 16px;cursor:pointer;
-font-weight:bold;z-index:999;
-box-shadow:0 5px 15px rgba(0,0,0,.2)
-}
-
-/* ===== SECTIONS ===== */
-section{padding:90px 20px;max-width:1200px;margin:auto}
-section h2{text-align:center;font-size:34px;margin-bottom:45px;color:#0a2a4a}
-
+section{padding:80px 20px;max-width:1100px;margin:auto}
+h2{text-align:center;margin-bottom:30px}
 .cards{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:30px;
+gap:20px;
 }
 .card{
 background:white;
-padding:32px;
-border-radius:18px;
-box-shadow:0 12px 35px rgba(0,0,0,.08);
-transition:.4s;
+padding:30px;
+border-radius:16px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+transition:transform .3s;
 }
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 20px 45px rgba(0,0,0,.15);
-}
-.card h3{margin-bottom:15px;color:#0d6efd}
-
-/* ===== TOKEN ===== */
+.card:hover{transform:translateY(-6px)}
 .token{
-background:linear-gradient(135deg,#0d6efd,#0a2a4a);
+background:linear-gradient(135deg,#0a2a4a,#0d6efd);
 color:white;
 border-radius:24px;
-padding:80px 30px;
-text-align:center;
+padding:70px 30px;
 }
-.token h2{color:white}
-.token ul{list-style:none;margin-top:30px}
-.token li{margin:14px 0;font-size:18px}
-<button id="connectWallet"
-style="
-margin-top:30px;
-padding:14px 32px;
-font-size:16px;
-border:none;
-border-radius:30px;
-cursor:pointer;
-background:white;
-color:#0d6efd;
-font-weight:bold;
-">
-Connect MetaMask
-</button>
-
-<p id="walletAddress" style="margin-top:15px;font-size:14px;"></p>
-
-/* ===== TOKENOMICS ===== */
-.tokenomics{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-margin-top:40px;
-}
-
-/* ===== BUTTON ===== */
 .btn{
 display:inline-block;
-margin-top:30px;
-padding:16px 34px;
+margin-top:25px;
+padding:14px 32px;
+border-radius:40px;
 background:white;
 color:#0d6efd;
-border-radius:40px;
 font-weight:bold;
 text-decoration:none;
-transition:.3s;
 }
-.btn:hover{transform:scale(1.08)}
-
-/* ===== FOOTER ===== */
+.wallet{
+margin-top:15px;
+font-size:14px;
+}
 footer{
 background:#0a2a4a;
 color:white;
 text-align:center;
-padding:45px 20px;
-font-size:14px;
+padding:40px 20px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="lang" onclick="toggleLang()">FR / EN</div>
-
 <header>
-<img src="logo-ambv.png" alt="AMBV Logo">
-<h1 data-fr="AMBV – Ambulance Value" data-en="AMBV – Ambulance Value"></h1>
-<p data-fr="Le premier projet blockchain dédié à la valorisation du secteur ambulancier."
-data-en="The first blockchain project dedicated to enhancing the ambulance sector."></p>
+<img src="logo-ambv.png" class="logo" alt="AMBV Logo">
+<h1 style="margin-top:25px">AMBV – Ambulance Value</h1>
+<p style="max-width:600px;margin:15px auto">
+The first blockchain project dedicated to enhancing and valuing the ambulance sector.
+</p>
 </header>
 
 <section>
-<h2 data-fr="Notre vision" data-en="Our vision"></h2>
-<p style="text-align:center;max-width:900px;margin:auto"
-data-fr="Créer un écosystème durable reliant professionnels du transport sanitaire, patients et investisseurs grâce à la blockchain."
-data-en="Building a sustainable ecosystem connecting ambulance professionals, patients and investors through blockchain."></p>
+<h2>Our Vision</h2>
+<p style="text-align:center;max-width:800px;margin:auto">
+AMBV aims to create a sustainable ecosystem connecting ambulance professionals,
+patients and investors through blockchain technology, ensuring transparency,
+fair compensation and long-term sector growth.
+</p>
 </section>
 
 <section>
-<h2 data-fr="Écosystème AMBV" data-en="AMBV Ecosystem"></h2>
+<h2>AMBV Ecosystem</h2>
 <div class="cards">
-<div class="card">
-<h3>🚑 Ambulanciers</h3>
-<p data-fr="Reconnaissance, valorisation et financement du terrain."
-data-en="Recognition, valuation and field funding."></p>
-</div>
-<div class="card">
-<h3>🔗 Blockchain</h3>
-<p data-fr="Traçabilité, transparence et automatisation."
-data-en="Traceability, transparency and automation."></p>
-</div>
-<div class="card">
-<h3>🤝 Communauté</h3>
-<p data-fr="Projet participatif et gouverné collectivement."
-data-en="Participatory and community-governed project."></p>
-</div>
+<div class="card"><b>🚑 Ambulance Sector</b><br><br>
+Direct field rewards, transparent funding and professional recognition.</div>
+<div class="card"><b>🔗 Blockchain</b><br><br>
+Traceability, automated payments, decentralized governance.</div>
+<div class="card"><b>🤝 Community</b><br><br>
+Open participation for professionals, supporters and investors.</div>
 </div>
 </section>
 
 <section class="token">
 <h2>Token AMBV</h2>
-<p data-fr="Le cœur économique du projet."
-data-en="The economic core of the project."></p>
+<p style="text-align:center;max-width:700px;margin:auto">
+AMBV is the economic backbone of the ecosystem. It enables payments,
+governance participation, rewards distribution and funding of real-world
+ambulance-related projects.
+</p>
+<div style="text-align:center">
+<a class="btn">Token purchase (coming soon)</a><br>
 
-<ul>
-<li data-fr="Paiements et récompenses terrain"
-data-en="Field payments and rewards"></li>
-<li data-fr="Gouvernance décentralisée"
-data-en="Decentralized governance"></li>
-<li data-fr="Financement de projets sanitaires"
-data-en="Healthcare project funding"></li>
-</ul>
-
-<a class="btn"
-data-fr="Achat du token (bientôt)"
-data-en="Token purchase (coming soon)"></a>
+<button id="connectWallet" class="btn">Connect MetaMask</button>
+<p id="wallet" class="wallet"></p>
+</div>
 </section>
 
 <section>
 <h2>Tokenomics</h2>
-<div class="tokenomics">
-<div class="card">
-<h3>💰 Offre totale</h3>
-<p>1 000 000 000 AMBV</p>
-</div>
-<div class="card">
-<h3>🚑 Secteur ambulancier</h3>
-<p>30 % – Récompenses terrain</p>
-</div>
-<div class="card">
-<h3>🌍 Écosystème</h3>
-<p>25 % – Développement & partenariats</p>
-</div>
-<div class="card">
-<h3>👥 Communauté</h3>
-<p>20 % – Staking & gouvernance</p>
-</div>
-<div class="card">
-<h3>📈 Investisseurs</h3>
-<p>15 % – Croissance long terme</p>
-</div>
-<div class="card">
-<h3>🔒 Équipe</h3>
-<p>10 % – Vesting sécurisé</p>
-</div>
+<div class="cards">
+<div class="card"><b>Total Supply</b><br>1,000,000,000 AMBV</div>
+<div class="card"><b>Ambulance Sector</b><br>30% – Field rewards</div>
+<div class="card"><b>Ecosystem</b><br>25% – Development & partnerships</div>
+<div class="card"><b>Community</b><br>20% – Staking & governance</div>
+<div class="card"><b>Investors</b><br>15% – Long-term growth</div>
+<div class="card"><b>Team</b><br>10% – Secured vesting</div>
 </div>
 </section>
 
 <section>
 <h2>Whitepaper</h2>
-<p style="text-align:center;max-width:900px;margin:auto"
-data-fr="Document de référence présentant la vision, la tokenomics, la gouvernance et la roadmap du projet AMBV."
-data-en="Reference document presenting the vision, tokenomics, governance and roadmap of the AMBV project."></p>
+<p style="text-align:center;max-width:800px;margin:auto">
+The AMBV whitepaper details the project vision, token utility,
+tokenomics, governance structure and long-term roadmap.
+It will be published once the ecosystem reaches deployment maturity.
+</p>
 </section>
 
 <footer>
-© 2025 AMBV – Ambulance Value<br>
-Blockchain & Santé
+© 2025 AMBV – Ambulance Value
 </footer>
 
 <script>
-let lang="fr";
-function toggleLang(){
-lang = lang==="fr" ? "en" : "fr";
-document.querySelectorAll("[data-fr]").forEach(el=>{
-el.innerText = el.dataset[lang];
-});
-}
-toggleLang();
-</script>
-<script>
-const connectBtn = document.getElementById("connectWallet");
-const walletText = document.getElementById("walletAddress");
-
-if (connectBtn) {
-  connectBtn.onclick = async () => {
-    if (typeof window.ethereum === "undefined") {
-      alert("MetaMask is not installed.");
-      return;
-    }
-
-    try {
-      const accounts = await window.ethereum.request({
-        method: "eth_requestAccounts"
-      });
-      const address = accounts[0];
-      walletText.textContent = "Connected wallet: " + address;
-      connectBtn.textContent = "Wallet connected";
-      connectBtn.disabled = true;
-    } catch (err) {
-      console.error(err);
-      alert("Connection refused");
-    }
-  };
+const btn=document.getElementById("connectWallet");
+const out=document.getElementById("wallet");
+if(btn){
+btn.onclick=async()=>{
+if(!window.ethereum){alert("MetaMask not installed");return;}
+const acc=await ethereum.request({method:"eth_requestAccounts"});
+out.textContent="Connected wallet: "+acc[0];
+btn.textContent="Wallet connected";
+btn.disabled=true;
+};
 }
 </script>
 
 </body>
 </html>
-
-
-
-
-
-
 
 
