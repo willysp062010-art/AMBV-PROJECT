@@ -6,100 +6,130 @@
 <title>AMBV – Ambulance Value</title>
 
 <style>
-:root{
---blue:#0d6efd;
---dark:#0a2a4a;
---gold:#f5c542;
---bg:#f4f8fb;
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
-margin:0;
-font-family:Arial,Helvetica,sans-serif;
-background:var(--bg);
-color:#1f2937;
+background:#f4f8fb;
+color:#1a1a1a;
 line-height:1.6;
 }
 
+/* ===== HEADER ===== */
 header{
-position: relative;
-background: linear-gradient(135deg, var(--dark), var(--blue));
-color: white;
-padding: 120px 20px;
-text-align: center;
-overflow: hidden;
+position:relative;
+text-align:center;
+padding:160px 20px;
+color:white;
+background:linear-gradient(135deg,#0a2a4a,#0d6efd);
+overflow:hidden;
 }
 
+header::before{
+content:"⚕";
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+font-size:520px;
+opacity:0.06;
+pointer-events:none;
+}
 
 header img{
-width:130px;
-margin-bottom:20px;
+width:380px;
+max-width:90%;
+margin-bottom:40px;
 }
 
+header h1{
+font-size:42px;
+margin-bottom:15px;
+}
+
+header p{
+font-size:18px;
+max-width:800px;
+margin:0 auto;
+opacity:0.95;
+}
+
+/* ===== SECTIONS ===== */
 section{
-max-width:1100px;
-margin:auto;
 padding:80px 20px;
+max-width:1200px;
+margin:auto;
 }
 
-h2{
-color:var(--dark);
-font-size:2.2rem;
-margin-bottom:25px;
+section h2{
+text-align:center;
+font-size:34px;
+margin-bottom:40px;
+color:#0a2a4a;
 }
 
-.grid{
+.cards{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
 }
 
 .card{
 background:white;
-padding:30px;
 border-radius:16px;
-box-shadow:0 15px 35px rgba(0,0,0,0.08);
+padding:30px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+transition:transform .3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
 }
 
 .card h3{
-margin-top:0;
-color:var(--blue);
+margin-bottom:15px;
+color:#0d6efd;
 }
 
+/* ===== TOKEN ===== */
 .token{
-background:linear-gradient(135deg,#ffffff,#eef5ff);
-}
-
-.roadmap-step{
-border-left:4px solid var(--blue);
-padding-left:20px;
-margin-bottom:25px;
-}
-
-.cta{
-background:var(--dark);
+background:linear-gradient(135deg,#0d6efd,#0a2a4a);
 color:white;
+border-radius:20px;
+padding:60px 30px;
 text-align:center;
-padding:90px 20px;
 }
 
-.cta a{
-background:var(--gold);
-color:#1f2937;
-padding:15px 40px;
-border-radius:30px;
-text-decoration:none;
-font-weight:bold;
-display:inline-block;
+.token h2{
+color:white;
+}
+
+.token ul{
+list-style:none;
 margin-top:30px;
 }
 
+.token li{
+margin:12px 0;
+font-size:18px;
+}
+
+/* ===== ROADMAP ===== */
+.roadmap li{
+margin-bottom:15px;
+}
+
+/* ===== FOOTER ===== */
 footer{
-background:#020b17;
-color:#cbd5e1;
+background:#0a2a4a;
+color:white;
 text-align:center;
 padding:40px 20px;
-font-size:.9rem;
+font-size:14px;
 }
 </style>
 </head>
@@ -107,301 +137,108 @@ font-size:.9rem;
 <body>
 
 <header>
-<img src="logo-ambv.png" alt="AMBV Logo" style="width:340px;max-width:90%;margin-bottom:30px;">
-header{
-position: relative;
-color: white;
-padding: 140px 20px;
-text-align: center;
-overflow: hidden;
-background:
-linear-gradient(135deg, rgba(10,42,74,0.95), rgba(13,110,253,0.95)),
-radial-gradient(circle at center, rgba(255,255,255,0.08) 0%, transparent 60%);
-}
-
-header::before{
-content:"⚕️";
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-font-size:480px;
-opacity:0.08;
-pointer-events:none;
-z-index:0;
-}
-
-header *{
-position:relative;
-z-index:1;
-}
-
-
-
-
-
+<img src="logo-ambv.png" alt="AMBV Logo">
 <h1>AMBV – Ambulance Value</h1>
-<p>Le premier projet blockchain dédié à la valorisation du secteur ambulancier.</p>
+<p>
+Le premier projet blockchain dédié à la valorisation du secteur ambulancier,
+à la transparence financière et à l’innovation médicale.
+</p>
 </header>
 
 <section>
 <h2>Notre vision</h2>
-<p>
-AMBV est né d’un constat simple : le secteur du transport sanitaire est essentiel, mais sous-valorisé.
-Notre mission est d’apporter transparence, reconnaissance et innovation grâce à la blockchain.
+<p style="text-align:center;max-width:900px;margin:auto;">
+AMBV a pour objectif de créer un écosystème durable reliant les professionnels
+du transport sanitaire, les patients et les investisseurs grâce à la blockchain.
+Nous voulons redonner de la valeur humaine, économique et sociale au secteur ambulancier.
 </p>
+</section>
+
+<section>
+<h2>L’écosystème AMBV</h2>
+<div class="cards">
+<div class="card">
+<h3>🚑 Secteur ambulancier</h3>
+<p>
+Valorisation du travail des ambulanciers, amélioration des conditions
+et reconnaissance du rôle essentiel dans le système de santé.
+</p>
+</div>
+
+<div class="card">
+<h3>🔗 Blockchain</h3>
+<p>
+Traçabilité, transparence des flux, sécurisation des données et
+automatisation via smart contracts.
+</p>
+</div>
+
+<div class="card">
+<h3>🤝 Communauté</h3>
+<p>
+Un projet collaboratif ouvert aux professionnels, investisseurs
+et acteurs de la santé.
+</p>
+</div>
+</div>
 </section>
 
 <section class="token">
 <h2>Le Token AMBV</h2>
-<div class="grid">
-<div class="card">
-<h3>Utilité</h3>
 <p>
-Le token AMBV est au cœur de l’écosystème : financement de projets, récompense de l’engagement
-et accès à des services exclusifs.
+Le token AMBV est au cœur de l’écosystème. Il permet de soutenir le projet,
+de récompenser les acteurs du terrain et de financer l’innovation.
 </p>
-</div>
-<div class="card">
-<h3>Économie réelle</h3>
-<p>
-AMBV s’appuie sur des usages concrets liés au monde ambulancier, et non sur de la spéculation vide.
-</p>
-</div>
-<div class="card">
-<h3>Vision long terme</h3>
-<p>
-Un token pensé pour durer, évoluer et accompagner la transformation numérique du secteur.
-</p>
-</div>
-</div>
+
+<ul>
+<li>💰 Utilité : paiements, récompenses, gouvernance</li>
+<li>🔐 Sécurité : blockchain décentralisée</li>
+<li>📈 Vision long terme : adoption progressive</li>
+<li>🌍 Impact réel dans le secteur médical</li>
+</ul>
 </section>
 
 <section>
-<h2>Tokenomics AMBV</h2>
-<div class="grid">
-
-<div class="card">
-<h3>Supply totale</h3>
-<p>
-100 000 000 AMBV<br>
-Distribution pensée pour la stabilité et l’utilité réelle.
-</p>
-</div>
-
-<div class="card">
-<h3>Développement & écosystème</h3>
-<p>
-30 % – Financement des outils, services et innovations liés au secteur ambulancier.
-</p>
-</div>
-
-<div class="card">
-<h3>Communauté</h3>
-<p>
-25 % – Récompenses, participation, engagement et croissance de l’écosystème.
-</p>
-</div>
-
-<div class="card">
-<h3>Partenariats</h3>
-<p>
-20 % – Adoption terrain, collaborations et intégrations stratégiques.
-</p>
-</div>
-
-<div class="card">
-<h3>Équipe</h3>
-<p>
-15 % – Verrouillés avec vesting long terme pour garantir l’alignement du projet.
-</p>
-</div>
-
-<div class="card">
-<h3>Réserve</h3>
-<p>
-10 % – Sécurité, stabilité et gestion responsable de l’écosystème.
-</p>
-</div>
-
-</div>
+<h2>Roadmap</h2>
+<ul class="roadmap">
+<li>Phase 1 : Lancement du projet et communauté</li>
+<li>Phase 2 : Déploiement du token AMBV</li>
+<li>Phase 3 : Partenariats ambulanciers</li>
+<li>Phase 4 : Outils blockchain dédiés au transport sanitaire</li>
+<li>Phase 5 : Expansion internationale</li>
+</ul>
 </section>
-
-
-
 
 <section>
-<h2>Sécurité & confiance</h2>
-<p>
-La sécurité et la transparence sont des piliers du projet AMBV.
-Les décisions sont documentées, la vision est claire, et l’écosystème évolue avec prudence.
-</p>
-</section>
-<section>
-<h2>Whitepaper – AMBV</h2>
-
+<h2>Transparence & valeurs</h2>
+<div class="cards">
 <div class="card">
-<h3>1. Introduction</h3>
+<h3>🔍 Transparence</h3>
 <p>
-AMBV – Ambulance Value est un projet né de la volonté de créer un lien concret entre
-le secteur du transport sanitaire et les technologies blockchain.
-Le projet vise à apporter de la valeur réelle, de la transparence et une vision long terme.
+Toutes les opérations sont traçables et vérifiables.
 </p>
 </div>
 
-<br>
-
 <div class="card">
-<h3>2. Problématique</h3>
+<h3>⚖️ Éthique</h3>
 <p>
-Le secteur ambulancier joue un rôle vital dans la société, mais souffre d’un manque
-de reconnaissance, de valorisation économique et d’outils numériques adaptés.
-Les modèles actuels sont fragmentés et peu transparents.
+Respect des professionnels, des patients et des investisseurs.
 </p>
 </div>
 
-<br>
-
 <div class="card">
-<h3>3. Solution AMBV</h3>
+<h3>🌱 Durabilité</h3>
 <p>
-AMBV propose un écosystème basé sur la blockchain permettant :
-<ul>
-<li>Une meilleure transparence des flux</li>
-<li>Une valorisation de l’engagement professionnel</li>
-<li>Un financement de projets concrets</li>
-<li>Une communauté alignée sur des valeurs humaines</li>
-</ul>
+Un projet pensé pour durer et évoluer avec le secteur médical.
 </p>
 </div>
-
-<br>
-
-<div class="card">
-<h3>4. Le Token AMBV</h3>
-<p>
-Le token AMBV est l’élément central de l’écosystème.
-Il permet :
-<ul>
-<li>L’accès à des services dédiés</li>
-<li>La participation aux décisions</li>
-<li>La récompense de l’engagement</li>
-<li>Le financement de l’évolution du projet</li>
-</ul>
-</p>
 </div>
-
-<br>
-
-<div class="card">
-<h3>5. Gouvernance & Sécurité</h3>
-<p>
-AMBV s’appuie sur des principes de gouvernance progressive,
-avec une vision transparente, documentée et évolutive.
-La sécurité des utilisateurs et la stabilité de l’écosystème sont prioritaires.
-</p>
-</div>
-
-<br>
-
-<div class="card">
-<h3>6. Vision long terme</h3>
-<p>
-AMBV ambitionne de devenir une référence dans l’intégration
-de la blockchain au secteur du transport sanitaire,
-en restant fidèle à une approche humaine, responsable et durable.
-</p>
-</div>
-<section>
-<h2>Whitepaper – English Version</h2>
-
-<div class="card">
-<h3>1. Introduction</h3>
-<p>
-AMBV – Ambulance Value is a project born from the desire to create a concrete link
-between the ambulance transport sector and blockchain technologies.
-The project aims to bring real value, transparency, and a long-term vision.
-</p>
-</div>
-
-<br>
-
-<div class="card">
-<h3>2. The Problem</h3>
-<p>
-The ambulance sector plays a vital role in society but suffers from a lack of recognition,
-economic valuation, and adapted digital tools.
-Current models are fragmented and lack transparency.
-</p>
-</div>
-
-<br>
-
-<div class="card">
-<h3>3. The AMBV Solution</h3>
-<p>
-AMBV offers a blockchain-based ecosystem designed to:
-<ul>
-<li>Improve transparency of financial flows</li>
-<li>Enhance professional engagement and recognition</li>
-<li>Finance real-world projects</li>
-<li>Build a value-driven community</li>
-</ul>
-</p>
-</div>
-
-<br>
-
-<div class="card">
-<h3>4. The AMBV Token</h3>
-<p>
-The AMBV token is the core element of the ecosystem.
-It enables:
-<ul>
-<li>Access to dedicated services</li>
-<li>Participation in governance</li>
-<li>Rewarding engagement</li>
-<li>Funding the project’s development</li>
-</ul>
-</p>
-</div>
-
-<br>
-
-<div class="card">
-<h3>5. Governance & Security</h3>
-<p>
-AMBV relies on progressive governance principles,
-with a transparent, documented, and evolving approach.
-User security and ecosystem stability are top priorities.
-</p>
-</div>
-
-<br>
-
-<div class="card">
-<h3>6. Long-Term Vision</h3>
-<p>
-AMBV aims to become a reference in integrating blockchain
-within the ambulance transport sector,
-while maintaining a human, responsible, and sustainable approach.
-</p>
-</div>
-
-</section>
-
-</section>
-
-<section class="cta">
-<h2>Rejoignez l’écosystème AMBV</h2>
-<p>
-Un projet sérieux, humain et innovant.
-</p>
-<a href="#">Rejoindre la communauté</a>
 </section>
 
 <footer>
-<p>© 2025 AMBV – Ambulance Value</p>
+© 2025 AMBV – Ambulance Value  
+<br>
+Projet blockchain dédié au secteur ambulancier
 </footer>
 
 </body>
