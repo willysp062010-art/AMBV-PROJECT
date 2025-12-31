@@ -246,9 +246,36 @@ el.innerText = el.dataset[lang];
 }
 toggleLang();
 </script>
+<script>
+const connectBtn = document.getElementById("connectWallet");
+const walletText = document.getElementById("walletAddress");
+
+if (connectBtn) {
+  connectBtn.onclick = async () => {
+    if (typeof window.ethereum === "undefined") {
+      alert("MetaMask is not installed.");
+      return;
+    }
+
+    try {
+      const accounts = await window.ethereum.request({
+        method: "eth_requestAccounts"
+      });
+      const address = accounts[0];
+      walletText.textContent = "Connected wallet: " + address;
+      connectBtn.textContent = "Wallet connected";
+      connectBtn.disabled = true;
+    } catch (err) {
+      console.error(err);
+      alert("Connection refused");
+    }
+  };
+}
+</script>
 
 </body>
 </html>
+
 
 
 
