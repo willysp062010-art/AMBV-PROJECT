@@ -1,96 +1,199 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AMBV – Ambulance Value</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f4f8fb;
-      color: #1f2937;
-    }
-    header {
-      background: linear-gradient(135deg, #0a2a4a, #0d6efd);
-      color: white;
-      padding: 50px 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-    header p {
-      max-width: 700px;
-      margin: 15px auto 0;
-      font-size: 1.1rem;
-    }
-    section {
-      max-width: 1000px;
-      margin: auto;
-      padding: 60px 20px;
-    }
-    h2 {
-      color: #0a2a4a;
-    }
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
-    }
-    .card {
-      background: white;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    }
-    footer {
-      background: #020b17;
-      color: #cbd5e1;
-      text-align: center;
-      padding: 30px 20px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AMBV – Ambulance Value</title>
+
+<style>
+:root{
+--blue:#0d6efd;
+--dark:#0a2a4a;
+--gold:#f5c542;
+--bg:#f4f8fb;
+}
+
+body{
+margin:0;
+font-family:Arial,Helvetica,sans-serif;
+background:var(--bg);
+color:#1f2937;
+line-height:1.6;
+}
+
+header{
+background:linear-gradient(135deg,var(--dark),var(--blue));
+color:white;
+padding:80px 20px;
+text-align:center;
+}
+
+header img{
+width:130px;
+margin-bottom:20px;
+}
+
+section{
+max-width:1100px;
+margin:auto;
+padding:80px 20px;
+}
+
+h2{
+color:var(--dark);
+font-size:2.2rem;
+margin-bottom:25px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:16px;
+box-shadow:0 15px 35px rgba(0,0,0,0.08);
+}
+
+.card h3{
+margin-top:0;
+color:var(--blue);
+}
+
+.token{
+background:linear-gradient(135deg,#ffffff,#eef5ff);
+}
+
+.roadmap-step{
+border-left:4px solid var(--blue);
+padding-left:20px;
+margin-bottom:25px;
+}
+
+.cta{
+background:var(--dark);
+color:white;
+text-align:center;
+padding:90px 20px;
+}
+
+.cta a{
+background:var(--gold);
+color:#1f2937;
+padding:15px 40px;
+border-radius:30px;
+text-decoration:none;
+font-weight:bold;
+display:inline-block;
+margin-top:30px;
+}
+
+footer{
+background:#020b17;
+color:#cbd5e1;
+text-align:center;
+padding:40px 20px;
+font-size:.9rem;
+}
+</style>
 </head>
+
 <body>
 
 <header>
-  <img src="logo-ambv.png" alt="Logo AMBV" style="width:120px;margin-bottom:20px;">
-  <h1>AMBV</h1>
-  <p>Ambulance Value – Un projet innovant combinant le secteur ambulancier et la technologie blockchain.</p>
+<img src="logo-ambv.png" alt="AMBV Logo">
+<h1>AMBV – Ambulance Value</h1>
+<p>Le premier projet blockchain dédié à la valorisation du secteur ambulancier.</p>
 </header>
 
-
 <section>
-  <h2>Notre vision</h2>
-  <p>
-    AMBV a pour objectif de créer de la valeur, de la transparence et un écosystème durable
-    pour le secteur du transport sanitaire grâce aux technologies numériques et blockchain.
-  </p>
+<h2>Notre vision</h2>
+<p>
+AMBV est né d’un constat simple : le secteur du transport sanitaire est essentiel, mais sous-valorisé.
+Notre mission est d’apporter transparence, reconnaissance et innovation grâce à la blockchain.
+</p>
+</section>
+
+<section class="token">
+<h2>Le Token AMBV</h2>
+<div class="grid">
+<div class="card">
+<h3>Utilité</h3>
+<p>
+Le token AMBV est au cœur de l’écosystème : financement de projets, récompense de l’engagement
+et accès à des services exclusifs.
+</p>
+</div>
+<div class="card">
+<h3>Économie réelle</h3>
+<p>
+AMBV s’appuie sur des usages concrets liés au monde ambulancier, et non sur de la spéculation vide.
+</p>
+</div>
+<div class="card">
+<h3>Vision long terme</h3>
+<p>
+Un token pensé pour durer, évoluer et accompagner la transformation numérique du secteur.
+</p>
+</div>
+</div>
 </section>
 
 <section>
-  <h2>L’écosystème AMBV</h2>
-  <div class="cards">
-    <div class="card">
-      <h3>🚑 Secteur ambulancier</h3>
-      <p>Valorisation du travail des professionnels du transport sanitaire.</p>
-    </div>
-    <div class="card">
-      <h3>🔗 Blockchain</h3>
-      <p>Transparence, traçabilité et innovation financière.</p>
-    </div>
-    <div class="card">
-      <h3>🤝 Communauté</h3>
-      <p>Un projet collaboratif ouvert aux professionnels et investisseurs.</p>
-    </div>
-  </div>
+<h2>Tokenomics (présentation)</h2>
+<div class="grid">
+<div class="card">
+<h3>Distribution</h3>
+<p>Allocation équilibrée entre développement, communauté et partenariats.</p>
+</div>
+<div class="card">
+<h3>Transparence</h3>
+<p>Suivi public, règles claires, vision long terme.</p>
+</div>
+<div class="card">
+<h3>Durabilité</h3>
+<p>Pas de promesses irréalistes, priorité à la stabilité.</p>
+</div>
+</div>
+</section>
+
+<section>
+<h2>Roadmap</h2>
+<div class="roadmap-step">
+<h3>Phase 1</h3>
+<p>Lancement du projet, site officiel, communauté.</p>
+</div>
+<div class="roadmap-step">
+<h3>Phase 2</h3>
+<p>Déploiement du token AMBV et partenariats stratégiques.</p>
+</div>
+<div class="roadmap-step">
+<h3>Phase 3</h3>
+<p>Écosystème complet, services dédiés, expansion.</p>
+</div>
+</section>
+
+<section>
+<h2>Sécurité & confiance</h2>
+<p>
+La sécurité et la transparence sont des piliers du projet AMBV.
+Les décisions sont documentées, la vision est claire, et l’écosystème évolue avec prudence.
+</p>
+</section>
+
+<section class="cta">
+<h2>Rejoignez l’écosystème AMBV</h2>
+<p>
+Un projet sérieux, humain et innovant.
+</p>
+<a href="#">Rejoindre la communauté</a>
 </section>
 
 <footer>
-  <p>© 2025 AMBV – Ambulance Value</p>
+<p>© 2025 AMBV – Ambulance Value</p>
 </footer>
 
 </body>
