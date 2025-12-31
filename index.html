@@ -7,13 +7,7 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
-
-body{
-background:#f4f8fb;
-color:#1a1a1a;
-line-height:1.6;
-overflow-x:hidden;
-}
+body{background:#f4f8fb;color:#1a1a1a;line-height:1.6;overflow-x:hidden}
 
 /* ===== HEADER ===== */
 header{
@@ -24,8 +18,6 @@ color:white;
 background:linear-gradient(135deg,#0a2a4a,#0d6efd);
 overflow:hidden;
 }
-
-/* symbole médical décalé */
 header::before{
 content:"⚕";
 position:absolute;
@@ -36,22 +28,6 @@ opacity:0.05;
 transform:translate(-50%,-50%) rotate(-15deg);
 pointer-events:none;
 }
-
-/* animation fond */
-header::after{
-content:"";
-position:absolute;
-inset:0;
-background:radial-gradient(circle at center,rgba(255,255,255,0.08),transparent 60%);
-animation:pulse 6s infinite alternate;
-}
-
-@keyframes pulse{
-from{opacity:.4}
-to{opacity:1}
-}
-
-/* animation logo */
 header img{
 width:420px;
 max-width:90%;
@@ -60,80 +36,44 @@ animation:float 4s ease-in-out infinite;
 position:relative;
 z-index:2;
 }
-
 @keyframes float{
 0%{transform:translateY(0)}
 50%{transform:translateY(-14px)}
 100%{transform:translateY(0)}
 }
+header h1{font-size:44px;margin-bottom:15px}
+header p{font-size:18px;max-width:900px;margin:auto;opacity:.95}
 
-header h1{
-font-size:44px;
-margin-bottom:15px;
-z-index:2;
-position:relative;
-}
-
-header p{
-font-size:18px;
-max-width:900px;
-margin:auto;
-opacity:.95;
-z-index:2;
-position:relative;
-}
-
-/* ===== LANGUAGE SWITCH ===== */
+/* ===== LANG ===== */
 .lang{
-position:fixed;
-top:20px;
-right:20px;
-background:white;
-border-radius:30px;
-padding:8px 16px;
-cursor:pointer;
-font-weight:bold;
-box-shadow:0 5px 15px rgba(0,0,0,.2);
-z-index:999;
+position:fixed;top:20px;right:20px;
+background:white;border-radius:30px;
+padding:8px 16px;cursor:pointer;
+font-weight:bold;z-index:999;
+box-shadow:0 5px 15px rgba(0,0,0,.2)
 }
 
 /* ===== SECTIONS ===== */
-section{
-padding:90px 20px;
-max-width:1200px;
-margin:auto;
-}
-
-section h2{
-text-align:center;
-font-size:34px;
-margin-bottom:45px;
-color:#0a2a4a;
-}
+section{padding:90px 20px;max-width:1200px;margin:auto}
+section h2{text-align:center;font-size:34px;margin-bottom:45px;color:#0a2a4a}
 
 .cards{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:30px;
 }
-
 .card{
 background:white;
 padding:32px;
 border-radius:18px;
 box-shadow:0 12px 35px rgba(0,0,0,.08);
-transition:transform .4s, box-shadow .4s;
+transition:.4s;
 }
-
 .card:hover{
 transform:translateY(-10px);
 box-shadow:0 20px 45px rgba(0,0,0,.15);
 }
-
-.card h3{
-margin-bottom:15px;
-color:#0d6efd;
-}
+.card h3{margin-bottom:15px;color:#0d6efd}
 
 /* ===== TOKEN ===== */
 .token{
@@ -143,17 +83,16 @@ border-radius:24px;
 padding:80px 30px;
 text-align:center;
 }
-
 .token h2{color:white}
+.token ul{list-style:none;margin-top:30px}
+.token li{margin:14px 0;font-size:18px}
 
-.token ul{
-list-style:none;
-margin-top:30px;
-}
-
-.token li{
-margin:14px 0;
-font-size:18px;
+/* ===== TOKENOMICS ===== */
+.tokenomics{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+margin-top:40px;
 }
 
 /* ===== BUTTON ===== */
@@ -166,13 +105,9 @@ color:#0d6efd;
 border-radius:40px;
 font-weight:bold;
 text-decoration:none;
-transition:transform .3s,box-shadow .3s;
+transition:.3s;
 }
-
-.btn:hover{
-transform:scale(1.08);
-box-shadow:0 10px 25px rgba(0,0,0,.25);
-}
+.btn:hover{transform:scale(1.08)}
 
 /* ===== FOOTER ===== */
 footer{
@@ -191,69 +126,98 @@ font-size:14px;
 
 <header>
 <img src="logo-ambv.png" alt="AMBV Logo">
-<h1 data-fr="AMBV – Ambulance Value"
-    data-en="AMBV – Ambulance Value"></h1>
+<h1 data-fr="AMBV – Ambulance Value" data-en="AMBV – Ambulance Value"></h1>
 <p data-fr="Le premier projet blockchain dédié à la valorisation du secteur ambulancier."
-   data-en="The first blockchain project dedicated to enhancing the ambulance sector."></p>
+data-en="The first blockchain project dedicated to enhancing the ambulance sector."></p>
 </header>
 
 <section>
 <h2 data-fr="Notre vision" data-en="Our vision"></h2>
 <p style="text-align:center;max-width:900px;margin:auto"
-data-fr="Créer un écosystème durable reliant professionnels, patients et investisseurs grâce à la blockchain."
-data-en="Building a sustainable ecosystem connecting professionals, patients and investors through blockchain."></p>
+data-fr="Créer un écosystème durable reliant professionnels du transport sanitaire, patients et investisseurs grâce à la blockchain."
+data-en="Building a sustainable ecosystem connecting ambulance professionals, patients and investors through blockchain."></p>
 </section>
 
 <section>
-<h2 data-fr="L’écosystème AMBV" data-en="AMBV Ecosystem"></h2>
+<h2 data-fr="Écosystème AMBV" data-en="AMBV Ecosystem"></h2>
 <div class="cards">
 <div class="card">
-<h3>🚑 Ambulance</h3>
-<p data-fr="Valorisation du travail ambulancier et reconnaissance du terrain."
-data-en="Enhancing ambulance professionals' work and field recognition."></p>
+<h3>🚑 Ambulanciers</h3>
+<p data-fr="Reconnaissance, valorisation et financement du terrain."
+data-en="Recognition, valuation and field funding."></p>
 </div>
 <div class="card">
 <h3>🔗 Blockchain</h3>
-<p data-fr="Transparence, sécurité et automatisation des flux."
-data-en="Transparency, security and automated flows."></p>
+<p data-fr="Traçabilité, transparence et automatisation."
+data-en="Traceability, transparency and automation."></p>
 </div>
 <div class="card">
 <h3>🤝 Communauté</h3>
-<p data-fr="Projet collaboratif ouvert et évolutif."
-data-en="Open and evolving collaborative project."></p>
+<p data-fr="Projet participatif et gouverné collectivement."
+data-en="Participatory and community-governed project."></p>
 </div>
 </div>
 </section>
 
 <section class="token">
 <h2>Token AMBV</h2>
-<p data-fr="Le cœur financier et communautaire du projet."
-data-en="The financial and community core of the project."></p>
+<p data-fr="Le cœur économique du projet."
+data-en="The economic core of the project."></p>
 
 <ul>
-<li data-fr="Paiements, récompenses et gouvernance"
-    data-en="Payments, rewards and governance"></li>
-<li data-fr="Financement de projets réels"
-    data-en="Funding real-world projects"></li>
-<li data-fr="Vision long terme et stabilité"
-    data-en="Long-term vision and stability"></li>
+<li data-fr="Paiements et récompenses terrain"
+data-en="Field payments and rewards"></li>
+<li data-fr="Gouvernance décentralisée"
+data-en="Decentralized governance"></li>
+<li data-fr="Financement de projets sanitaires"
+data-en="Healthcare project funding"></li>
 </ul>
 
 <a class="btn"
-data-fr="Achat du token (bientôt disponible)"
+data-fr="Achat du token (bientôt)"
 data-en="Token purchase (coming soon)"></a>
+</section>
+
+<section>
+<h2>Tokenomics</h2>
+<div class="tokenomics">
+<div class="card">
+<h3>💰 Offre totale</h3>
+<p>1 000 000 000 AMBV</p>
+</div>
+<div class="card">
+<h3>🚑 Secteur ambulancier</h3>
+<p>30 % – Récompenses terrain</p>
+</div>
+<div class="card">
+<h3>🌍 Écosystème</h3>
+<p>25 % – Développement & partenariats</p>
+</div>
+<div class="card">
+<h3>👥 Communauté</h3>
+<p>20 % – Staking & gouvernance</p>
+</div>
+<div class="card">
+<h3>📈 Investisseurs</h3>
+<p>15 % – Croissance long terme</p>
+</div>
+<div class="card">
+<h3>🔒 Équipe</h3>
+<p>10 % – Vesting sécurisé</p>
+</div>
+</div>
 </section>
 
 <section>
 <h2>Whitepaper</h2>
 <p style="text-align:center;max-width:900px;margin:auto"
-data-fr="Document officiel présentant la vision, la tokenomics, la gouvernance et la roadmap du projet AMBV."
-data-en="Official document presenting the vision, tokenomics, governance and roadmap of the AMBV project."></p>
+data-fr="Document de référence présentant la vision, la tokenomics, la gouvernance et la roadmap du projet AMBV."
+data-en="Reference document presenting the vision, tokenomics, governance and roadmap of the AMBV project."></p>
 </section>
 
 <footer>
-© 2025 AMBV – Ambulance Value  
-<br>Blockchain & Santé
+© 2025 AMBV – Ambulance Value<br>
+Blockchain & Santé
 </footer>
 
 <script>
@@ -269,6 +233,7 @@ toggleLang();
 
 </body>
 </html>
+
 
 
 
