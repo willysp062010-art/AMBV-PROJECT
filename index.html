@@ -108,17 +108,36 @@ font-size:.9rem;
 
 <header>
 <img src="logo-ambv.png" alt="AMBV Logo" style="width:340px;max-width:90%;margin-bottom:30px;">
-<div style="
+header{
+position: relative;
+color: white;
+padding: 140px 20px;
+text-align: center;
+overflow: hidden;
+background:
+linear-gradient(135deg, rgba(10,42,74,0.95), rgba(13,110,253,0.95)),
+radial-gradient(circle at center, rgba(255,255,255,0.08) 0%, transparent 60%);
+}
+
+header::before{
+content:"⚕️";
 position:absolute;
 top:50%;
 left:50%;
 transform:translate(-50%,-50%);
-font-size:420px;
-opacity:0.06;
+font-size:480px;
+opacity:0.08;
 pointer-events:none;
-">
-⚕️
-</div>
+z-index:0;
+}
+
+header *{
+position:relative;
+z-index:1;
+}
+
+
+
 
 
 <h1>AMBV – Ambulance Value</h1>
@@ -387,6 +406,7 @@ Un projet sérieux, humain et innovant.
 
 </body>
 </html>
+
 
 
 
